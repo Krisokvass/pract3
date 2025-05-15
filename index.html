@@ -78,11 +78,11 @@
         }
         .ad-card {
             border: 1px solid #ccc;
-            padding: 10px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 200px; /* fixed height for uniformity */
+            height: 150px; /* fixed height for uniformity */
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
@@ -103,6 +103,8 @@
             color: #fff;
             cursor: pointer;
             font-size: 15px;
+            width: 150px;
+            height: 20px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
         }
@@ -136,12 +138,12 @@
             text-decoration: underline;
         }
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .ad-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .ad-grid {
                 grid-template-columns: 1fr;
             }
