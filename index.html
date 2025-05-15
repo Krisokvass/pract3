@@ -1,196 +1,228 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-  body {
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advertising Page</title>
+    <style>
+
+        {
+            box-sizing: border-box;
+        }
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Хедер */
+        /* Header styles */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background-color: #f0f0f0;
+            background-color: #f8f8f8;
             position: relative;
         }
 
-        /* Логотип слева */
+        /* Logo */
         .logo {
-            font-size: 1.5em;
+            font-size: 24px;
             font-weight: bold;
         }
 
-        /* Строка поиска и навигация */
-        .top-right {
+        /* Navigation */
+        nav {
+            margin-left: 20px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search bar */
+        .search-container {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        /* Menu in top right corner */
+        .menu {
             position: absolute;
             top: 10px;
             right: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        }
+        .menu button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
         }
 
-        /* Строка поиска */
-        .search-input {
-            padding: 5px 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        /* Навигация */
-        nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* Основной раздел */
+        /* Main content styles */
         main {
             padding: 20px;
         }
-
-        /* Объявления - сетка 2 ряда x 3 колонки */
-        .ads-grid {
+        .ad-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
-
-        /* Карточка объявления */
-        .card {
+        .ad-card {
             border: 1px solid #ccc;
-            border-radius: 8px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100%;
+            height: 250px; /* fixed height for uniformity */
         }
-
-        /* Название или изображение */
-        .card-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+        .ad-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
         }
-
-        /* Кнопка "Перейти" */
-        .view-button {
-            margin-top: 10px;
-            padding: 8px 12px;
+        .ad-card p {
+            flex-grow: 1;
+            font-size: 14px;
+            margin: 0 0 10px 0;
+        }
+        .ad-card button {
+            align-self: center;
+            padding: 8px 16px;
             background-color: #007BFF;
-            color: white;
             border: none;
-            border-radius: 4px;
+            color: #fff;
             cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1em;
+            font-size: 14px;
+            border-radius: 4px;
         }
-
-        .view-button:hover {
+        .ad-card button:hover {
             background-color: #0056b3;
         }
 
-        /* Подвал */
+        /* Footer styles */
         footer {
-            background-color: #f0f0f0;
+            background-color: #f8f8f8;
             padding: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
-
-        .contacts {
-            margin-bottom: 10px;
+        .contact-info {
+            flex: 1;
+            min-width: 200px;
         }
-
         .resources {
-            display: flex;
-            gap: 15px;
+            flex: 1;
+            min-width: 200px;
         }
-
         .resources a {
+            display: block;
+            margin-bottom: 5px;
             text-decoration: none;
             color: #333;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .ad-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .ad-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">Логотип</div>
-    <div class="top-right">
-        <input type="text" class="search-input" placeholder="Поиск..." />
+    <header>
+        <!-- Logo on the left -->
+        <div class="logo">MyLogo</div>
+        <!-- Navigation menu -->
         <nav>
-            <a href="#">Главная</a>
-            <a href="#">Объявления</a>
-            <a href="#">Контакты</a>
-            <a href="#">О нас</a>
+            <a href="#">Home</a>
+            <a href="#">Listings</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
-    </div>
-</header>
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" placeholder="Search..." />
+        </div>
+        <!-- Menu in top right corner -->
+        <div class="menu">
+            <button aria-label="Menu">☰</button>
+        </div>
+    </header>
 
-<main>
-    <section class="ads-grid">
-        <!-- Первый ряд из 3 карточек -->
-        <div class="card">
-            <div class="card-title">Объявление 1</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
+    <main>
+        <div class="ad-grid">
+            <!-- Advertisement Card 1 -->
+            <div class="ad-card">
+                <h3>Ad Title 1</h3>
+                <p>Brief description of advertisement 1.</p>
+                <button>Go to</button>
+            </div>
+            <!-- Advertisement Card 2 -->
+            <div class="ad-card">
+                <h3>Ad Title 2</h3>
+                <p>Brief description of advertisement 2.</p>
+                <button>Go to</button>
+            </div>
+            <!-- Advertisement Card 3 -->
+            <div class="ad-card">
+                <h3>Ad Title 3</h3>
+                <p>Brief description of advertisement 3.</p>
+                <button>Go to</button>
+            </div>
+            <!-- Advertisement Card 4 -->
+            <div class="ad-card">
+                <h3>Ad Title 4</h3>
+                <p>Brief description of advertisement 4.</p>
+                <button>Go to</button>
+            </div>
+            <!-- Advertisement Card 5 -->
+            <div class="ad-card">
+                <h3>Ad Title 5</h3>
+                <p>Brief description of advertisement 5.</p>
+                <button>Go to</button>
+            </div>
+            <!-- Advertisement Card 6 -->
+            <div class="ad-card">
+                <h3>Ad Title 6</h3>
+                <p>Brief description of advertisement 6.</p>
+                <button>Go to</button>
+            </div>
         </div>
-        <div class="card">
-            <div class="card-title">Объявление 2</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
-        </div>
-        <div class="card">
-            <div class="card-title">Объявление 3</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
-        </div>
-        <!-- Второй ряд из 3 карточек -->
-        <div class="card">
-            <div class="card-title">Объявление 4</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
-        </div>
-        <div class="card">
-            <div class="card-title">Объявление 5</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
-        </div>
-        <div class="card">
-            <div class="card-title">Объявление 6</div>
-            <div>Описание или изображение</div>
-            <button class="view-button">Перейти</button>
-        </div>
-    </section>
-</main>
+    </main>
 
-<footer>
-    <div class="contacts">
-        <p>Контактная информация: +7 (999) 123-45-67 | email@domain.com</p>
-    </div>
-    <div class="resources">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Пользовательское соглашение</a>
-        <a href="#">Документы</a>
-        <a href="#">Ресурсы</a>
-    </div>
-</footer>
-
-</body>
+    <footer>
+        <div class="contact-info">
+            <h4>Contact Us</h4>
+            <p>Email: info@example.com</p>
+            <p>Phone: +1 234 567 8900</p>
+            <p>Address: 123 Main Street, City, Country</p>
+        </div>
+        <div class="resources">
+            <h4>Resources</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Help Center</a>
+        </div>
+    </footer>
 </body>
 </html>
