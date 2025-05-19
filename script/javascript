@@ -49,3 +49,17 @@ addButton.addEventListener('click', handleAdd);
 
 // Initial rendering
 renderCards();
+function renderCards() {
+    let container = document.getElementById("cardsContainer");
+    container.innerHTML = "";
+    places.forEach((place, index) => {
+        let card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <img src="${place.image}" alt="">
+            <h3>${place.title}</h3>
+            <p>${place.description}</p>
+            <button onclick="deleteCard(${index})">Удалить</button>
+        `;
+        container.appendChild(card);
+    });
