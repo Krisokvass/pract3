@@ -63,3 +63,7 @@ function renderCards() {
         `;
         container.appendChild(card);
     });
+function deleteCard(index) {
+    places.splice(index, 1);
+    renderCards();
+}
