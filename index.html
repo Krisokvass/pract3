@@ -170,44 +170,17 @@
     </header>
 
     <main>
-        <div class="ad-grid">
-            <!-- Advertisement Card 1 -->
-            <div class="ad-card">
-                <h3>Ad Title 1</h3>
-                <p>Brief description of advertisement 1.</p>
-                <button>Go to</button>
-            </div>
-            <!-- Advertisement Card 2 -->
-            <div class="ad-card">
-                <h3>Ad Title 2</h3>
-                <p>Brief description of advertisement 2.</p>
-                <button>Go to</button>
-            </div>
-            <!-- Advertisement Card 3 -->
-            <div class="ad-card">
-                <h3>Ad Title 3</h3>
-                <p>Brief description of advertisement 3.</p>
-                <button>Go to</button>
-            </div>
-            <!-- Advertisement Card 4 -->
-            <div class="ad-card">
-                <h3>Ad Title 4</h3>
-                <p>Brief description of advertisement 4.</p>
-                <button>Go to</button>
-            </div>
-            <!-- Advertisement Card 5 -->
-            <div class="ad-card">
-                <h3>Ad Title 5</h3>
-                <p>Brief description of advertisement 5.</p>
-                <button>Go to</button>
-            </div>
-            <!-- Advertisement Card 6 -->
-            <div class="ad-card">
-                <h3>Ad Title 6</h3>
-                <p>Brief description of advertisement 6.</p>
-                <button>Go to</button>
-            </div>
+       <!-- Container for cards -->
+  <div id="cardsContainer">
+    <!-- Cards will be dynamically added here -->
+  </div>
         </div>
+        <h2>Add New Listing</h2>
+  <form id="addObjectForm">
+    <input type="text" id="title" placeholder="Title" required />
+    <textarea id="description" placeholder="Description" rows="3" required></textarea>
+    <input type="text" id="image" placeholder="Image URL" required />
+    <button type="submit" id="addObjectButton">Add Object</button>
     </main>
 
     <footer>
@@ -223,6 +196,7 @@
             <a href="#">Terms of Service</a>
             <a href="#">Help Center</a>
         </div>
+        
     </footer>
 </body>
 </html>
