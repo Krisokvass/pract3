@@ -251,7 +251,21 @@
     const data = localStorage.getItem('listings');
     return JSON.parse(data) || [];
   }
+         
+localStorage.setItem("places", JSON.stringify(places));
 
+function deleteCard(index) {
+    places.splice(index, 1);
+    localStorage.setItem("places", JSON.stringify(places));
+    renderCards();
+}
+function clearAll() {
+    localStorage.removeItem("places");
+    places = [];
+    renderCards();
+}
+
+         
   // Function to display listings
   function displayListings(filteredListings) {
     const container = document.getElementById('listings');
