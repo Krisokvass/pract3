@@ -230,6 +230,81 @@
         </div>
         
     </footer>
-       <script src="script.js"></script>
+     <script>
+  // Default data
+  const defaultListings = [
+    { id: 1, title: "Car for rent", description: "I rent a car in good condition, with mileage and all available documents." },
+    { id: 2, title: "Selling a garage", description: "a good garage for low durability in the Malinka area." },
+    { id: 3, title: "Italo Disco records", description: "records with many artists of the Italo Disco genre" },
+    { id: 4, title: "Czech vase", description: "a vase from the Czech Republic. Old but preaty" },
+    { id: 5, title: "Anime action figure", description: "anime action figure from One-Punch Man" },
+    { id: 6, title: "I put the kittens in good hands.", description: "I sell kittens. Half a year for everyone" }
+  ];
+
+  // Initialize localStorage if empty
+  if (!localStorage.getItem('listings')) {
+    localStorage.setItem('listings', JSON.stringify(defaultListings));
+  }
+
+  // Function to load listings from localStorage
+  function loadListings() {
+    const data = localStorage.getItem('listings');
+    return JSON.parse(data) || [];
+  }
+
+  // Function to display listings
+  function displayListings(filteredListings) {
+    const container = document.getElementById('listings');
+    container.innerHTML = '';
+
+    // Arrange listings in 2 rows of 3 columns each (total 6 cards)
+    const listingsToShow = filteredListings.slice(0, 6);
+    listingsToShow.forEach(listing => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const title = document.createElement('h3');
+      title.textContent = listing.title;
+
+      const desc = document.createElement('p');
+      desc.textContent = listing.description;
+
+      const button = document.createElement('button');
+      button.textContent = 'Go to';
+      button.onclick = () => alert(`Navigating to ${listing.title}`);
+
+      card.appendChild(title);
+      card.appendChild(desc);
+      card.appendChild(button);
+
+      container.appendChild(card);
+    });
+  }
+
+  // Function to handle search
+  function handleSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const allListings = loadListings();
+    const filtered = allListings.filter(listing =>
+      listing.title.toLowerCase().includes(query) ||
+      listing.description.toLowerCase().includes(query)
+    );
+    displayListings(filtered);
+  }
+
+  // Initialize page
+  document.addEventListener('DOMContentLoaded', () => {
+    // Load and display listings
+    displayListings(loadListings());
+
+    // Add search event
+    document.getElementById('searchInput').addEventListener('input', handleSearch);
+
+    // Example menu button (not functional)
+    document.getElementById('menuButton').addEventListener('click', () => {
+      alert('Menu clicked!');
+    });
+  });
+</script>
 </body>
 </html>
