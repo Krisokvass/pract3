@@ -245,7 +245,7 @@
   if (!localStorage.getItem('listings')) {
     localStorage.setItem('listings', JSON.stringify(defaultListings));
   }
-
+    let places = JSON.parse(localStorage.getItem("places")) || [];
   // Function to load listings from localStorage
   function loadListings() {
     const data = localStorage.getItem('listings');
