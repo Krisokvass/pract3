@@ -1,4 +1,13 @@
-  const adContainer = document.getElementById('ad-card');
+  const ads = [
+    { title: "Car for rent", image: "car.jpg?text=Ad+1" },
+    { title: "Selling a garage", image: "gara.jpg?text=Ad+2" },
+    { title: "Italo Disco records", image: "ital.jpg?text=Ad+3" },
+    { title: "Czech vase", image: "vase.png?text=Ad+4" },
+    { title: "Anime action figure", image: "anim.jpg?text=Ad+5" },
+    { title: "I put the kittens in good hands", image: "cat.jpg?text=Ad+6" }
+  ];
+
+const adContainer = document.getElementById('ad-card');
   const addButton = document.getElementById('add-button');
 
   function renderCards() {
