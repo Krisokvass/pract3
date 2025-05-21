@@ -1,4 +1,4 @@
- const ads = 
+ const ad = 
     { title: "Ad 1", image: "https://via.placeholder.com/300x200.jpg?text=Ad+1" },
     { title: "Ad 2", image: "https://via.placeholder.com/300x200.png?text=Ad+2" },
     { title: "Ad 3", image: "https://via.placeholder.com/300x200.jpg?text=Ad+3" },
