@@ -63,4 +63,14 @@ if(img.style.display === 'block'){
     renderCards();
   });
 
+function addPlace() {
+    let title = document.getElementById("titleInput").value;
+    let description = document.getElementById("descriptionInput").value;
+    let image = document.getElementById("imageInput").value;
+
+    places.push({ title, description, image });
+    renderCards();
+}
+
+
   renderCards();
