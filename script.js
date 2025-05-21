@@ -1,12 +1,3 @@
- const ad = 
-    { title: "Ad 1", image: "https://via.placeholder.com/300x200.jpg?text=Ad+1" },
-    { title: "Ad 2", image: "https://via.placeholder.com/300x200.png?text=Ad+2" },
-    { title: "Ad 3", image: "https://via.placeholder.com/300x200.jpg?text=Ad+3" },
-    { title: "Ad 4", image: "https://via.placeholder.com/300x200.png?text=Ad+4" },
-    { title: "Ad 5", image: "https://via.placeholder.com/300x200.jpg?text=Ad+5" },
-    { title: "Ad 6", image: "https://via.placeholder.com/300x200.png?text=Ad+6" },
-  ;
-
   const adContainer = document.getElementById('ad-card');
   const addButton = document.getElementById('add-button');
 
