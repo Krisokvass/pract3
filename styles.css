@@ -1,0 +1,143 @@
+ <style>
+
+        {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            position: relative;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            margin-left: 20px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search bar */
+        .search-container {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        /* Menu in top right corner */
+        .menu {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .menu button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .ad-card {
+            border: 1px solid #ccc;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 150px; /* fixed height for uniformity */
+        }
+        .ad-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+        .ad-card p {
+            flex-grow: 1;
+            font-size: 14px;
+            margin: 0 0 10px 0;
+        }
+        .ad-card button {
+            align-self: center;
+            padding: 8px 16px;
+            background-color: #DC143C;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+        }
+        .ad-card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .resources {
+            flex: 1;
+            min-width: 200px;
+        }
+        .resources a {
+            display: block;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 700px) {
+            .ad-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 400px) {
+            .ad-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
