@@ -57,7 +57,7 @@ if(img.style.display === 'block'){
   addButton.addEventListener('click', () => {
     const newAdIndex = ads.length + 1;
     ads.push({
-      title: Ad ${newAdIndex},
+      title: Ad {newAdIndex},
       image: https://via.placeholder.com/300x200.png?text=Ad+${newAdIndex}
     });
     renderCards();
