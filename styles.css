@@ -101,6 +101,32 @@
             background-color: #0056b3;
         }
 
+         .card img {
+          max-width: 100%;
+          display: none;
+          margin-top: 10px;
+          border-radius: 4px;
+         }
+        .delete-btn {
+         background-color: #dc3545;
+         margin-left: 8px;
+  }
+        .delete-btn:hover {
+         background-color: #a71d2a;
+  }
+       #add-button {
+        margin-top: 20px;
+        padding: 12px 18px;
+        font-size: 16px;
+        background-color: green;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+       }
+#add-button:hover {
+ background-color: darkgreen;
+  }
         /* Footer styles */
         footer {
             background-color: #f8f8f8;
